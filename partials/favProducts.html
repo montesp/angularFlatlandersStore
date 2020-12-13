@@ -1,0 +1,33 @@
+<div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+    <div class="text-center">
+        <h2 class="title">Lo mas vendido</h2>
+    </div>
+    <hr>
+    <ol class="carousel-indicators">
+        <li data-target="#multi-item-example" class="bg-info" data-slide-to="0" class="active"></li>
+        <li data-target="#multi-item-example" class="bg-info" data-slide-to="1"></li>
+    </ol>
+
+    <div class="carousel-inner" role="listbox" >
+
+        <div class="carousel-item mt-lg-5" ng-repeat= "tanda in fav.partitedArray" ng-Class="{active: $index == 0}"  >
+
+            <div class="col-md-3" style="float:left" ng-repeat= "prod in tanda">
+                <div class="card mb-2 bg-rose">
+                    <div class="card-header">
+                        <img class="card-img-top" ng-src="{{prod.images[0]}}"
+                            style="width: 400;height: 240px;" alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                        <hr>
+                        <div class="text-center">
+                            <h4 class="card-title">{{prod.name}}</h4>
+                            <p class="card-text">{{prod.price | currency}}</p>
+                            <a class="btn btn-white btn-warning btn-block text-dark text-center" ui-sref="app.product({_id:prod._id})">Ver</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

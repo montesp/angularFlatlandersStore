@@ -1,1 +1,1 @@
-# angularFlatlandersStore
+# flatlanders
